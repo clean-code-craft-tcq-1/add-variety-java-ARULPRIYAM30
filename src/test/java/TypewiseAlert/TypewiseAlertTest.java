@@ -3,9 +3,6 @@ package TypewiseAlert;
 import java.lang.reflect.InvocationTargetException;
 import static org.junit.Assert.assertTrue;
 import org.junit.Test;
-import TypewiseAlert.*;
-import TypewiseAlert.BreachType;
-
 public class TypewiseAlertTest {
     @Test
     public void infersBreachAsPerLimits()
