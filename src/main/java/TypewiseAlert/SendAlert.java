@@ -10,16 +10,20 @@ public class SendAlert {
 		System.out.println(String.format("%d %s", header, breachType));
 	}
 
-	public static void sendToEmail(BreachType breachType) throws Exception {
-		String recepient = "xyz.b@c.com";
+	public static void sendToEmail(BreachType breachType)  {
+		String recepient = "a.b@c.com";
 		BreachTypeSelector breachTypeSelector = new BreachTypeSelector();
 		Class breachTypeClassSelector = breachTypeSelector.getClass();
 		Method breachTypeClassMethodSelector;
-	
+		try {
 			breachTypeClassMethodSelector = breachTypeClassSelector.getDeclaredMethod(breachType.toString(),
 					String.class);
+			
 			breachTypeClassMethodSelector.invoke(breachTypeSelector, recepient);
-		
+			}
+			catch(Exception e) {
+				e.getMessage();
+			}
 
 	}
 
