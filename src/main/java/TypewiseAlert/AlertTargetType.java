@@ -10,7 +10,7 @@ public class AlertTargetType {
 		SendAlert.sendToController(breachType);
 	}
 	
-	public void TO_EMAIL(BreachType breachType) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException{
+	public void TO_EMAIL(BreachType breachType) throws Exception{
 		SendAlert.sendToEmail(breachType);
 	}
 	
