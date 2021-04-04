@@ -18,28 +18,37 @@ public class TypewiseAlert {
 	}
 
 	public static BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC)
-			throws Exception {
+			 {
 		CoolingLimit coolingLimit = new CoolingLimit();
 		Class coolingClassSelector = coolingLimit.getClass();
 		Method coolingClassMethodSelector;
+		try {
 		coolingClassMethodSelector = coolingClassSelector.getDeclaredMethod(coolingType.toString(), null);
 		coolingClassMethodSelector.invoke(coolingLimit);
-
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 		lowerLimit = coolingLimit.getLowerLimit();
 		upperLimit = coolingLimit.getUpperLimit();
 
 		return inferBreach(temperatureInC, lowerLimit, upperLimit);
 	}
 
-	public static void checkAndAlert(AlertType alertTarget, BatteryInfo batteryChar, double temperatureInC)
-			throws Exception {
+	public static void checkAndAlert(AlertType alertTarget, BatteryInfo batteryinfo, double temperatureInC)
+			{
 		BreachType breachType;
 
-		breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
+		breachType = classifyTemperatureBreach(batteryinfo.coolingType, temperatureInC);
 		AlertTargetType alertTargetType = new AlertTargetType();
 		Class alertTargetClass = alertTargetType.getClass();
+		try {
 		Method alertTargetMethod = alertTargetClass.getDeclaredMethod(alertTarget.toString(), BreachType.class);
 		alertTargetMethod.invoke(alertTargetType, breachType);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
 
 	}
 
