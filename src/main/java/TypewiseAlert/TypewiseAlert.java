@@ -18,8 +18,7 @@ public class TypewiseAlert {
 	}
 
 	public static BreachType classifyTemperatureBreach(CoolingType coolingType, double temperatureInC)
-			throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
-			InvocationTargetException {
+			throws Exception {
 		CoolingLimit coolingLimit = new CoolingLimit();
 		Class coolingClassSelector = coolingLimit.getClass();
 		Method coolingClassMethodSelector;
@@ -33,8 +32,7 @@ public class TypewiseAlert {
 	}
 
 	public static void checkAndAlert(AlertType alertTarget, BatteryInfo batteryChar, double temperatureInC)
-			throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException,
-			InvocationTargetException {
+			throws Exception {
 		BreachType breachType;
 
 		breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
