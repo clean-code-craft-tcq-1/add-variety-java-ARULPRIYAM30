@@ -10,8 +10,13 @@ public class AlertTargetType {
 		SendAlert.sendToController(breachType);
 	}
 	
-	public void TO_EMAIL(BreachType breachType) throws Exception{
+	public void TO_EMAIL(BreachType breachType){
+		try {
 		SendAlert.sendToEmail(breachType);
+		}
+		catch(Exception e) {
+			e.getMessage();
+		}
 	}
 	
 }
