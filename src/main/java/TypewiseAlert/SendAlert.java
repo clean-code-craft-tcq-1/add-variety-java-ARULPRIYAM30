@@ -10,8 +10,8 @@ public class SendAlert {
 		System.out.println(String.format("%d %s", header, breachType));
 	}
 
-	public static void sendToEmail(BreachType breachType) throws NoSuchMethodException, SecurityException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-		String recepient = "a.b@c.com";
+	public static void sendToEmail(BreachType breachType) throws Exception {
+		String recepient = "xyz.b@c.com";
 		BreachTypeSelector breachTypeSelector = new BreachTypeSelector();
 		Class breachTypeClassSelector = breachTypeSelector.getClass();
 		Method breachTypeClassMethodSelector;
