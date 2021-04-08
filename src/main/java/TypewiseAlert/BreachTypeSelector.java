@@ -9,11 +9,11 @@ public class BreachTypeSelector {
 	
 	public void TOO_HIGH(String recepient) {
         System.out.println("To: %s\n", recepient);
-        System.out.println("Hi, Battery the temperature is too high\n");
+        System.out.println("Hi, Battery temperature is too high\n");
 	}
 	
 	public void NORMAL(String recepient) {
         System.out.println("To: %s\n", recepient);
-        System.out.println("Hi, Battery the temperature is normal\n");
+        System.out.println("Hi, Battery temperature is normal\n");
 	}
 }
