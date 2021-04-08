@@ -22,6 +22,7 @@ public class TypewiseAlertTest {
 		BatteryInfo batteryproperties = new BatteryInfo(CoolingType.HI_ACTIVE_COOLING, "PowerShell battery");
 		TypewiseAlert.checkAndAlert(AlertType.TO_CONTROLLER, batteryproperties, 60);
     }
+	@Test
     public void infersBreachAlertToEmail()
     {
 		BatteryInfo batteryproperties = new BatteryInfo(CoolingType.PASSIVE_COOLING, "Grid PowerCell");
